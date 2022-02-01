@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace assecor_assessment_backend.Services.Db
+namespace web_api.Services.Db
 {
     public class DatabaseInteractor : DbContext
     {
@@ -20,6 +20,6 @@ namespace assecor_assessment_backend.Services.Db
             base.OnConfiguring(optionsBuilder);
         }
 
-        public DbSet<Models.Person> Person { get; set; }
+        public DbSet<Models.Zoo> Zoo { get; set; }
     }
 }

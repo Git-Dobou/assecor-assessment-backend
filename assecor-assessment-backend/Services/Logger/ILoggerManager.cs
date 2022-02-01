@@ -1,6 +1,6 @@
 using System;
 
-namespace assecor_assessment_backend.Services.Logger
+namespace web_api.Services.Logger
 {
     public interface ILoggerManager
     {

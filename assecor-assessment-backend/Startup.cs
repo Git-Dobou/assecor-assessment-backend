@@ -1,8 +1,6 @@
-using assecor_assessment_backend.Services.Color;
-using assecor_assessment_backend.Services.Db;
-using assecor_assessment_backend.Services.Logger;
-using assecor_assessment_backend.Services.Path;
-using assecor_assessment_backend.Services.Person;
+using web_api.Services.Db;
+using web_api.Services.Logger;
+using web_api.Services.Zoo;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace assecor_assessment_backend
+namespace web_api
 {
     public class Startup
     {
@@ -25,12 +23,11 @@ namespace assecor_assessment_backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            var a = Configuration.GetConnectionString("cs");
             services.AddDbContext<DatabaseInteractor>(options => options.UseSqlite(Configuration.GetConnectionString("cs")));
 
             services.AddSingleton<ILoggerManager, LoggerManager>();
-            services.AddSingleton<IPathService, PathService>();
-            services.AddSingleton<IColorService, ColorService>();
-            services.AddScoped<IPersonService, PersonService>();
+            services.AddScoped<IZooService, ZooService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

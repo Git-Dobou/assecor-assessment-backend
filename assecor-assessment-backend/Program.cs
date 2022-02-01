@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace assecor_assessment_backend
+namespace web_api
 {
     public class Program
     {

@@ -1,7 +1,7 @@
 using System;
 using NLog;
 
-namespace assecor_assessment_backend.Services.Logger
+namespace web_api.Services.Logger
 {
     public class LoggerManager : ILoggerManager
     {
